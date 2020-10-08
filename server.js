@@ -24,6 +24,10 @@ app.use(routes);
 
 // Start our server so that it can begin listening to client requests.
 
+app.get("/", (req, res)=>{
+  res.render("index");
+});
+
 app.get("/api/config", (req, res) => {
   res.json({
     success: true,
