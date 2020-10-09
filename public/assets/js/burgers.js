@@ -1,16 +1,14 @@
 $(() => {
   $(".change-devoured").on("click", (event) => {
+      console.log($(this).data());
     let id = $(this).data("id");
-    let newDevoured = $(this).data("newdevoured");
-
-    let newDevourState = {
-      devoured: newdevoured,
-    };
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: newDevourState,
+      data: {
+          devoured: true
+      },
     }).then(() => {
       console.log("changed devoured to", newDevoured);
       // Reload the page to get the updated list
@@ -21,6 +19,7 @@ $(() => {
   $(".create-form").on("submit", (event) => {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
+    console.log($(this).data());
 
     let newBurger = {
       burger_name: $("#bu").val().trim(),
@@ -39,6 +38,7 @@ $(() => {
   });
 
   $(".delete-burger").on("click", (event) =>{
+    console.log($(this).data());
     let id = $(this).data("id");
 
     // Send the DELETE request.
