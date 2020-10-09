@@ -37,7 +37,7 @@ $(document).ready(function (){
     });
   });
 
-  $(document).on("click", ".delete-burger", function(event) {
+  $(".delete-burger").on("click", function(event) {
     console.log($(this).data());
     let id = $(this).data("id");
 

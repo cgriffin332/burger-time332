@@ -10,17 +10,17 @@
             <h2>Burgers to eat!</h2>
             <ul class="text-left burger-list">
                 {{#each burgers}}
+                {{#unless devoured}}
                 <li>
-                    {{#unless devoured}}
-                    <p>{{burger_name}}</p>
+                    {{burger_name}}
                     <button class="devoured" data-id="{{id}}">
                         DEVOUR
                     </button>
                     <button class="delete-burger" data-id="{{id}}">
                         DELETE
                     </button>
-                    {{/unless}}
                 </li>
+                {{/unless}}
                 {{/each}}
             </ul>
 
@@ -29,14 +29,14 @@
             <h2>Devoured Burgers!</h2>
             <ul class="text-left">
                 {{#each burgers}}
+                {{#if devoured}}
                 <li>
-                    {{#if devoured}}
-                    <p>{{burger_name}}</p>
+                    {{burger_name}}
                     <button class="delete-burger" data-id="{{id}}">
                         DELETE
                     </button>
-                    {{/if}}
                 </li>
+                {{/if}}
                 {{/each}}
             </ul>
         </div>
