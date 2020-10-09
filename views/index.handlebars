@@ -8,23 +8,29 @@
     <div class="row mb-5">
         <div class="col-6 text-center">
             <h2>Burgers to eat!</h2>
-            <ul>
+            <ul class="text-left">
                 {{#each burgers}}
-                {{#unless devoured}}
-                <button class="change-devoured" data-id="{{id}}">
-                    DEVOUR
-                </button>
-                {{/unless}}
+                <li>
+                    {{#unless devoured}}
+                    {{burger_name}}
+                    <button class="change-devoured" data-id="{{id}}" data-newsleep="{{devoured}}">
+                        DEVOUR
+                    </button>
+                    {{/unless}}
+                </li>
                 {{/each}}
             </ul>
 
         </div>
         <div class="col-6 text-center">
             <h2>Devoured Burgers!</h2>
-            <ul>
+            <ul class="text-left">
                 {{#each burgers}}
-                {{#if devoured}}
-                {{/if}}
+                <li>
+                    {{#if devoured}}
+                    {{burger_name}}
+                    {{/if}}
+                </li>
                 {{/each}}
             </ul>
         </div>
