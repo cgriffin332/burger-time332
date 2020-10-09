@@ -1,6 +1,6 @@
-$(() => {
-  $(".change-devoured").on("click", (event) => {
-      console.log($(this).data());
+$(document).ready(function (){
+  $(document).on("click", ".devoured", function(event) {
+      console.log($(this));
     let id = $(this).data("id");
 
     // Send the PUT request.
@@ -10,13 +10,13 @@ $(() => {
           devoured: true
       },
     }).then(() => {
-      console.log("changed devoured to", newDevoured);
+      console.log("changed to devoured");
       // Reload the page to get the updated list
       location.reload();
     });
   });
 
-  $(".create-form").on("submit", (event) => {
+  $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
     console.log($(this).data());
@@ -37,7 +37,7 @@ $(() => {
     });
   });
 
-  $(".delete-burger").on("click", (event) =>{
+  $(document).on("click", ".delete-burger", function(event) {
     console.log($(this).data());
     let id = $(this).data("id");
 

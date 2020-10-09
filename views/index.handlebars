@@ -8,12 +8,12 @@
     <div class="row mb-5">
         <div class="col-6 text-center">
             <h2>Burgers to eat!</h2>
-            <ul class="text-left">
+            <ul class="text-left burger-list">
                 {{#each burgers}}
                 <li>
                     {{#unless devoured}}
-                    {{burger_name}}
-                    <button class="change-devoured" data-id="{{id}}">
+                    <p>{{burger_name}}</p>
+                    <button class="devoured" data-id="{{id}}">
                         DEVOUR
                     </button>
                     <button class="delete-burger" data-id="{{id}}">
@@ -31,7 +31,7 @@
                 {{#each burgers}}
                 <li>
                     {{#if devoured}}
-                    {{burger_name}}
+                    <p>{{burger_name}}</p>
                     <button class="delete-burger" data-id="{{id}}">
                         DELETE
                     </button>
