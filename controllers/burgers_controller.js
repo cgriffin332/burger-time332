@@ -2,10 +2,10 @@ var express = require("express");
 
 var router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// Import the model to use its database functions.
 var burger = require("../models/burger.js");
 
-// Create all our routes and set up logic within those routes where required.
+// Create all our routes
 router.get("/", (req, res) => {
   burger.selectAll((data) => {
     let hbsObject = {
@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
     res.render("index", hbsObject);
   });
 });
-
+// post route
 router.post("/api/burgers", (req, res) => {
   burger.insertOne(
     ["burger_name", "devoured"],
@@ -26,7 +26,7 @@ router.post("/api/burgers", (req, res) => {
     }
   );
 });
-
+// route to update
 router.put("/api/burgers/:id", (req, res) => {
   let condition = "id = " + req.params.id;
 
@@ -47,7 +47,7 @@ router.put("/api/burgers/:id", (req, res) => {
     }
   );
 });
-
+// route to delete
 router.delete("/api/burgers/:id", (req, res) => {
   let condition = "id = " + req.params.id;
 

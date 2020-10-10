@@ -18,12 +18,10 @@ const objToSql = (ob) => {
     let value = ob[key];
     // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
-      // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+      // if string with spaces, add quotations
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
-      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
       arr.push(key + "=" + value);
     }
   }
@@ -33,6 +31,7 @@ const objToSql = (ob) => {
 };
 // Object for all our SQL statement functions.
 const orm = {
+  // orm to get all burgers
   selectAll: (tableInput, cb) => {
     let queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function (err, result) {
@@ -42,6 +41,7 @@ const orm = {
       cb(result);
     });
   },
+  // orm to add a burger
   insertOne: (table, cols, vals, cb) => {
     let queryString = "INSERT INTO " + table;
 
@@ -62,7 +62,7 @@ const orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+  // orm to devour burger
   updateOne: (table, objColVals, condition, cb) => {
     var queryString = "UPDATE " + table;
 
@@ -80,16 +80,15 @@ const orm = {
       cb(result);
     });
   },
+  //orm to delete burger
   deleteOne: (table, condition, cb) => {
     let queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
-
     connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   },
