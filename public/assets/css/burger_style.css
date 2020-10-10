@@ -1,17 +1,16 @@
+body {
+    background: #faebd7;
+}
 li {
   padding: 5px;
   margin: 5px;
-  background: #faebd7;
+  background: #fcfbfb;
 }
 
-.label {
-  font-weight: bold;
-}
-
-.create-update-form {
+.create-form {
   padding: 5px;
   margin: 5px;
-  background: aqua;
+  font-size: 22px;
 }
 
 .form-group {
