@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="row mb-5">
-        <div class="col-6 text-center">
+        <div class="col-12 col-lg-6 text-center">
             <h2>Burgers to eat!</h2>
             <ul class="text-left burger-list">
                 {{#each burgers}}
@@ -27,10 +27,10 @@
                 <li>
                     <img src="/assets/img/burger.png" alt="burger" width="45px">
                     {{burger_name}}
-                    <button class="devoured float-right btn btn-success text-right" data-id="{{id}}">
-                        DEVOUR IT!
+                    <button class="devoured float-right btn btn-success text-right px-2" data-id="{{id}}">
+                        DEVOUR!
                     </button>
-                    <button class="delete-burger float-right btn btn-danger mr-2 text-right" data-id="{{id}}">
+                    <button class="delete-burger float-right btn btn-danger mr-2 text-right px-2" data-id="{{id}}">
                         DELETE
                     </button>
                 </li>
@@ -39,7 +39,7 @@
             </ul>
 
         </div>
-        <div class="col-6 text-center">
+        <div class="col-12 col-lg-6 text-center">
             <h2>Devoured Burgers!</h2>
             <ul class="text-left">
                 {{#each burgers}}
@@ -47,7 +47,7 @@
                 <li>
                     <img src="/assets/img/burger.png" alt="burger" width="45px">
                     {{burger_name}}
-                    <button class="delete-burger float-right btn btn-danger" data-id="{{id}}">
+                    <button class="delete-burger float-right btn btn-danger px-2" data-id="{{id}}">
                         DELETE
                     </button>
                 </li>

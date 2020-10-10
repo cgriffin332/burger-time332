@@ -2,16 +2,16 @@
 const connection = require("../config/connection.js");
 
 // loops through and creates an array of question marks
-const printQuestionMarks = (num) =>{
+const printQuestionMarks = (num) => {
   let arr = [];
   for (let i = 0; i < num; i++) {
     arr.push("?");
   }
   return arr.toString();
-}
+};
 // Helper function to convert object key/value pairs to SQL syntax
-const objToSql = (ob) =>{
-    let arr = [];
+const objToSql = (ob) => {
+  let arr = [];
 
   // loop through the keys and push the key/value as a string int arr
   for (let key in ob) {
@@ -30,7 +30,7 @@ const objToSql = (ob) =>{
 
   // translate array of strings to a single comma-separated string
   return arr.toString();
-}
+};
 // Object for all our SQL statement functions.
 const orm = {
   selectAll: (tableInput, cb) => {
@@ -54,7 +54,7 @@ const orm = {
 
     console.log(queryString);
 
-    connection.query(queryString, vals, (err, result) =>{
+    connection.query(queryString, vals, (err, result) => {
       if (err) {
         throw err;
       }
@@ -72,7 +72,7 @@ const orm = {
     queryString += condition;
 
     console.log(queryString);
-    connection.query(queryString, (err, result) =>{
+    connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
       }
@@ -85,7 +85,7 @@ const orm = {
     queryString += " WHERE ";
     queryString += condition;
 
-    connection.query(queryString, (err, result) =>{
+    connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
       }
