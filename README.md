@@ -20,7 +20,19 @@ All the user needs to do is click the link to get started.
 
 ## Usage
 
-Once the user has clicked the link, they are navigated to the main home page with a few seed data burgers already present. New burgers to devour can be added by typing the name of each burger into the form and clicking "Add Burger". The user can then devour a burger by clicking the "Devour it!" button, and it will then move to the devoured list. Burgers can be deleted by clicking the corresponding "Delete" button, and the process can go on and on. Please enjoy, and bon appetit!
+Once the user has clicked the link, they are navigated to the main home page with a few seed data burgers already present. 
+![Image of Start](./public/assets/img/burger1.png)
+
+New burgers to devour can be added by typing the name of each burger into the form and clicking "Add Burger". 
+![Image of Add](./public/assets/img/burger2.png)
+
+The user can then devour a burger by clicking the "Devour!" button, and it will then move to the devoured list. 
+![Image of Devour](./public/assets/img/burger3.png)
+
+Burgers can be deleted by clicking the corresponding "Delete" button, and the process can go on and on. 
+![Image of Delete](./public/assets/img/burger4.png)
+
+Please enjoy, and bon appetit!
 
 ## License
 
