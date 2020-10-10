@@ -2,7 +2,7 @@
     <div class="row mb-5">
         <div class="col text-center">
             <h1>It's Burger Time!</h1>
-            <img src="http://www.pngall.com/wp-content/uploads/2016/05/Burger-PNG-File.png" alt="burger" width="400px">
+            <img src="/assets/img/burger.png" alt="burger" width="400px">
             <h5>Are you ready to devour some burgers???</h5>
         </div>
     </div>
@@ -13,7 +13,7 @@
                 {{#each burgers}}
                 {{#unless devoured}}
                 <li>
-                    <img src="http://www.pngall.com/wp-content/uploads/2016/05/Burger-PNG-File.png" alt="burger" width="40px">
+                    <img src="/assets/img/burger.png" alt="burger" width="40px">
                     {{burger_name}}
                     <button class="devoured" data-id="{{id}}">
                         Devour it!
@@ -33,7 +33,7 @@
                 {{#each burgers}}
                 {{#if devoured}}
                 <li>
-                    <img src="http://www.pngall.com/wp-content/uploads/2016/05/Burger-PNG-File.png" alt="burger" width="40px">
+                    <img src="/assets/img/burger.png" alt="burger" width="40px">
                     {{burger_name}}
                     <button class="delete-burger" data-id="{{id}}">
                         DELETE
